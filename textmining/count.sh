@@ -1,3 +1,9 @@
 #!/bin/bash
 source ~/.bashrc
-mongo localhost:27017/$1 --eval 'db.tweetdata.count()' --quiet >> ./tab/$1.tab
+cmd="mongo localhost:27017/bitcoin --eval 'db.tweetdata.find({text: /hogehoge/i }).count()' --quiet  >> ./tab/hogehoge.tab"
+while read line
+do
+    eval ${cmd//hogehoge/$line}
+done < /Users/masayuki/local/bitcoin_twitter_analysis/coinmarket_rank/rank_demo.tab
+
+
