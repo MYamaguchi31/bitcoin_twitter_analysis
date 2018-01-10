@@ -126,10 +126,6 @@ def main():
         try:
             count = count + 1
             sys.stdout.write("%d, "% count)
-            #if  count == 101:
-            #    break
-            #res = getTweetData(type(lines[0]), max_id=mid, since_id=sid)
-            #res = getTweetData(search_conf, max_id=mid, since_id=sid)
             res = getTweetData(hogehoge, max_id=mid, since_id=sid)
             if res['result']==False:
                 # 失敗したら終了する
@@ -157,7 +153,6 @@ def main():
                 elif 'next_results' in res['metadata']:
                 # 結果をmongoDBに格納する
                     meta.insert({"metadata":res['metadata'], "insert_date": now_unix_time()})
-                    #print "loop"
                     for s in res['statuses']:
                         tweetdata.insert(s)
                     next_url = res['metadata']['next_results']
