@@ -26,11 +26,13 @@ for file in files:
         lines = read_file.readlines() #読み込み
         lines2 = []
         for line in lines:
-            if count<40: 
+            if count<39: 
                 line = line.replace(txt_old,txt_new) #テキスト置換
-            elif count==40:
+                line = "$"+line
+            elif count==39:
                 line = line.replace(txt_old,'') #テキスト置換
-            if count>40: 
+                line = "$"+line
+            if count>39: 
                 continue
             count+=1
             lines2.append(line) #別リストにする

@@ -13,7 +13,7 @@ coinname = args[1]
 timeP =  datetime.datetime.now() - datetime.timedelta(hours=12)
 unixtimeP = str(int(time.mktime(timeP.timetuple())))
 
-print unixtimeP
+#print unixtimeP
 #str_timeP = timeP.strftime('%Y/%m/%d %H:%M:%S')
 
 #置換文字列を指定
