@@ -3,7 +3,6 @@ import initialize as init
 from requests_oauthlib import OAuth1Session
 from requests.exceptions import ConnectionError, ReadTimeout, SSLError
 import json, datetime, time, pytz, re, sys, traceback, unicodedata, pymongo
-#from pymongo import Connection     # Connection classは廃止されたのでMongoClientに変更
 
 from pymongo import MongoClient
 import numpy as np
@@ -36,12 +35,21 @@ def initialize(): # twitter接続情報や、mongoDBへの接続処理等initial
     posi_nega_dict = db.posi_nega_dict
 
 def getTweetData(search_word, max_id, since_id):
+ 
     global twitter
     url = 'https://api.twitter.com/1.1/search/tweets.json'
     #url = 'https://api.twitter.com/1.1/search/universal.json'
+    str_data = datetime.date.today() - datetime.timedelta(days=2)
+    print str_data
+    print search_word
     params = {'q': search_word,
               'count':'100',
-    }
+              'result_type':'recent',
+              'lang':'ja',
+              "locale":"ja",
+              'exclude':'retweets',
+              'since': str_data
+              }
     # max_idの指定があれば設定する
     if max_id != -1:
         params['max_id'] = max_id

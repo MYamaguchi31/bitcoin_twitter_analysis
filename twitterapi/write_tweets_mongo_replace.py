@@ -13,15 +13,15 @@ f.close()
 
 
 #置換文字列を指定
-name_old='main_textmining' #この文字を含むファイルを操作＋ファイル名の置換元文字列
-name_new='main_textmining_sub' #ファイル名の置換後文字列
+name_old='write_tweets_mongo' #この文字を含むファイルを操作＋ファイル名の置換元文字列
+name_new='write_tweets_mongo_sub' #ファイル名の置換後文字列
 txt_old='hogehoge' #ファイル内の置換元 文字列
-txt_new= 'u'+''+lines.replace('\n','')+''; #ファイル内の置換後文字列
+txt_new= lines.replace('\n','')+''; 
 
 #パス指定小楽でスクリプト配置フォルダのファイル一覧取得
 files = os.listdir("./")
 for file in files:
-    txt = re.compile("main_textmining.py")
+    txt = re.compile("write_tweets_mongo.py")
     if txt.search(file):
         # ファイル名の置換前後の文字列を指定
         file_new = file.replace(name_old,name_new)
