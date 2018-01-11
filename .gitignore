@@ -1,0 +1,8 @@
+*~
+*.txt
+*.tab
+#*
+*sub*
+.DS_Store
+*.log
+*.csv
