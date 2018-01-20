@@ -16,4 +16,4 @@ rate = float(countN)/float(countP)
 if float(countP)==0. or rate<=1.:
     print 'no-data'
 else:
-    print '{0}:{1}:_{2}_percent'.format(date,"hogehoge",rate)
+    print '{0}:{1}:_{2}_percent'.format(date,"hogehoge",rate*100.)
