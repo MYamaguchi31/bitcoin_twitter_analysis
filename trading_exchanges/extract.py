@@ -1,5 +1,5 @@
 import re
-#<a href="https://www.coingecko.com/en/coins/bitcoin">
+
 a = '<a href="https://www.coingecko.com/en/coins/'
 b = '">'
 f = open('./list.dat')
