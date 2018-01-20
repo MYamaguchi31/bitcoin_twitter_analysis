@@ -6,3 +6,9 @@
 .DS_Store
 *.log
 *.csv
+*.dat
+*.org
+*.old
+*png*
+*.css
+*sample*
