@@ -11,10 +11,11 @@ while line:
         line = f.readline()
         continue
     key = line.replace('\n','')
-    dic.setdefault(key, []).append(value)
+    dic.setdefault(key, set()).add(value)
     line = f.readline()
     
-#print dic['Zaif']
-print dic['Bitflyer']
+#print dic['Bitflyer']
+for key, value in dic.iteritems():
+    print key, value
 
 f.close()
